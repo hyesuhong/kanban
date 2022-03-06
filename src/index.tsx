@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { RecoilRoot } from 'recoil';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import App from './App';
-import { darkTheme } from './theme';
+import { lightTheme } from './theme';
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=Raleway:ital,wght@1,700&display=swap');
@@ -73,7 +73,7 @@ button {
 ReactDOM.render(
 	<React.StrictMode>
 		<RecoilRoot>
-			<ThemeProvider theme={darkTheme}>
+			<ThemeProvider theme={lightTheme}>
 				<GlobalStyle />
 				<App />
 			</ThemeProvider>

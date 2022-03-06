@@ -12,9 +12,8 @@ declare module 'styled-components' {
 		textColor: string;
 		bgColor: string;
 		accentColor: string;
-		shadeColor: string;
-		darkerShadeColor: string;
-		upwardColor: string;
-		downwardColor: string;
+		secondColor: string;
+		cardColor: string;
+		boardColor: string;
 	}
 }
