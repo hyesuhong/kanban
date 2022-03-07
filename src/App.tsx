@@ -3,7 +3,6 @@ import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { toDoState } from './atoms';
 import Board from './components/Board';
-import DraggableCard from './components/DraggableCard';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -32,8 +31,9 @@ function App() {
 			// same board
 			setToDos((allBoards) => {
 				const copy = [...allBoards[source.droppableId]];
+				const toDoObj = copy[source.index];
 				copy.splice(source.index, 1);
-				copy.splice(destination.index, 0, draggableId);
+				copy.splice(destination.index, 0, toDoObj);
 				return {
 					...allBoards,
 					[source.droppableId]: copy,
@@ -44,8 +44,9 @@ function App() {
 			setToDos((allBoards) => {
 				const startCopy = [...allBoards[source.droppableId]];
 				const destCopy = [...allBoards[destination.droppableId]];
+				const toDoObj = startCopy[source.index];
 				startCopy.splice(source.index, 1);
-				destCopy.splice(destination.index, 0, draggableId);
+				destCopy.splice(destination.index, 0, toDoObj);
 				return {
 					...allBoards,
 					[source.droppableId]: startCopy,
